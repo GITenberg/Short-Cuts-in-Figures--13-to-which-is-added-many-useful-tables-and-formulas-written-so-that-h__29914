@@ -1,0 +1,90 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+using std::string;
+
+// DX = digit width, DY = digit height + padding
+double DX(0.025), DY(0.05), H1(0.1), V1(0.3), H2(0.75), V2(0);
+
+// digit separation as a vector, small tweak for line ends
+P digit(DX,0), mY(0,0.5*DY);
+
+void put(const P& loc, const string& msg)
+{
+  label(loc, P(0,0), "$"+msg+"$", l);
+}
+
+void bar(const P& loc, double len)
+{
+  line(loc-len*digit, loc+digit);
+}
+
+int main()
+{
+  picture(P(0,0), P(1,0.75), "4 x 2.25in");
+
+  begin();
+
+  // locations of right edges of summands
+  P sum1a(H1, V1+3.5*DY), sum1b(H1, V1+2.5*DY),
+    sum1c(H1, V1+1.5*DY), sum1d(H1, V1);
+
+  P sum2a(H2, V2+15*DY),   sum2b(H2, V2+14*DY),
+    sum2c(H2, V2+12.5*DY), sum2d(H2, V2+11.5*DY),
+    sum2e(H2, V2+10*DY),   sum2f(H2, V2+9*DY),
+    sum2g(H2, V2+7.5*DY),  sum2h(H2, V2+6.5*DY),
+    sum2i(H2, V2+5*DY),    sum2j(H2, V2+4*DY),
+    sum2k(H2, V2+2.5*DY),  sum2l(H2, V2+1.5*DY);
+
+  // First sum
+  put(sum1a, "541");
+  put(sum1b, "237");
+  put(sum1c, "764");
+  bar(P(H1, V1+0.75*DY), 4);
+
+  put(sum1d, "1542");
+
+  // Second sum
+  put(sum2a, "541");
+  put(sum2b, "7");
+  bar(P(H2, V2+13.25*DY), 3);
+
+  put(sum2c, "548");
+  put(sum2d, "30");
+  bar(P(H2, V2+10.75*DY), 3);
+
+  put(sum2e, "578");
+  put(sum2f, "200");
+  bar(P(H2, V2+8.25*DY), 3);
+
+  put(sum2g, "778");
+  put(sum2h, "4");
+  bar(P(H2, V2+5.75*DY), 3);
+
+  put(sum2i, "782");
+  put(sum2j, "60");
+  bar(P(H2, V2+3.25*DY), 3);
+
+  put(sum2k, "842");
+  put(sum2l, "700");
+  bar(P(H2, V2+0.75*DY), 4);
+
+  put(P(H2, V2), "1542");
+
+  // Lines
+  line(sum1a, sum2a - 3*digit);
+
+  line(sum1b + 0.5*mY, sum2b - digit);
+  line(sum1b - digit, sum2d - 2*digit);
+  line(sum1b - 2*digit, sum2f - 3*digit);
+
+  line(sum1c, sum2h - digit);
+  line(sum1c - digit - 0.5*mY, sum2j - 2*digit);
+  line(sum1c - 2*digit - mY, sum2l - 3*digit);
+
+  label(P(xmin(), ymax()), P(2,0), "\\textsf{\\Large Example}", r);
+  label(P(H2+DX, V2), P(2,0), "\\textsf{\\Large (answer)}", r);
+
+  end();
+}
