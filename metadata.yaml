@@ -1,0 +1,31 @@
+_repo: Short-Cuts-in-Figures--13-to-which-is-added-many-useful-tables-and-formulas-written-so-that-h__29914
+_version: 0.1.0
+covers:
+- cover_type: generated
+  image_path: cover.png
+creator:
+  author:
+    agent_name: Collins, A. Frederick (Archie Frederick)
+    alias: Collins, Archie Frederick
+    birthdate: 1869
+    deathdate: 1952
+    gutenberg_agent_id: '2266'
+    url: http://www.gutenberg.org/2009/agents/2266
+description: ''
+gutenberg_bookshelf: Mathematics
+gutenberg_issued: '2009-09-06'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '29914'
+  lccn: '16023026'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Ready-reckoners'
+- !lcc 'QA'
+- !lcsh 'Arithmetic'
+title: "Short Cuts in Figures\r\nto which is added many useful tables and formulas\
+  \ written so that he who runs may read"
+url: http://www.gutenberg.org/ebooks/29914
