@@ -12,6 +12,8 @@ creator:
     gutenberg_agent_id: '2266'
     url: http://www.gutenberg.org/2009/agents/2266
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/29914#Short-Cuts-in-Figures--13-to-which-is-added-many-useful-tables-and-formulas-written-so-that-h_
 gutenberg_bookshelf: Mathematics
 gutenberg_issued: '2009-09-06'
 gutenberg_type: Text
